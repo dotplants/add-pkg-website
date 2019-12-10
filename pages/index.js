@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Container } from 'reactstrap';
+import { Container, Nav, NavLink, NavItem } from 'reactstrap';
 
 import '../scss/index.scss';
 
-const commands = ['npm install --save', 'yarn add', 'pnpm add'];
+const commands = {
+  add: {
+    pkg: {
+      normal: 'npx add-pkg [your-package]',
+      dev: 'npx add-pkg [your-package] -d',
+      global: 'npx add-pkg [your-package] -g'
+    },
+    normal: ['npm install --save', 'yarn add', 'pnpm add'],
+    dev: ['npm install --save-dev', 'yarn add --dev', 'pnpm add --dev'],
+    global: ['npm install --global', 'yarn global add', 'pnpm add --global']
+  }
+};
 
 const Index = () => {
-  const [command, setCommand] = useState(0);
+  const [id, setId] = useState(0);
+  const [command, setCommand] = useState('normal');
 
   const Changer = time =>
     setTimeout(
       () =>
-        setCommand(prev => {
+        setId(prev => {
           let next = prev + 1;
-          if (!commands[next]) {
+          if (!commands.add[command][next]) {
             next = 0;
           }
           return next;
@@ -51,9 +63,25 @@ const Index = () => {
           </div>
 
           <div className="my-3">
-            <code className="add-pkg">
-              npx <b>add-pkg</b> [your-package]
-            </code>
+            <Nav fill pills className="mb-2">
+              <NavItem>
+                <NavLink href="#" onClick={() => setCommand('normal')}>
+                  add
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#" onClick={() => setCommand('dev')}>
+                  dev
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#" onClick={() => setCommand('global')}>
+                  global
+                </NavLink>
+              </NavItem>
+            </Nav>
+
+            <code className="add-pkg">{commands.add.pkg[command]}</code>
 
             <div className="my-2">
               <img
@@ -69,7 +97,7 @@ const Index = () => {
               onAnimationIteration={changer}
               onAnimationStart={firstChanger}
             >
-              {commands[command]} [your-package]
+              {commands.add[command][id]} [your-package]
             </code>
           </div>
 
@@ -101,7 +129,7 @@ const Index = () => {
             href="https://www.flaticon.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mx-1"
+            className="ml-1"
           >
             www.flaticon.com
           </a>
@@ -112,7 +140,7 @@ const Index = () => {
             href="https://dotplants.net/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mx-1"
+            className="ml-1"
           >
             .Plants (dotPlants)
           </a>

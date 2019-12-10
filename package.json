@@ -1,0 +1,45 @@
+{
+  "name": "@dotplants/add-pkg-website",
+  "version": "1.0.0",
+  "repository": "https://github.com/dotplants/add-pkg-website.git",
+  "author": "dotPlants HQ <oss@dotplants.net>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint:js": "eslint --ignore-path .gitignore \"**/*.js\"",
+    "lint:css": "stylelint --ignore-path .gitignore **/*.scss",
+    "lint:prettier": "pretty-quick --check",
+    "lint": "npm-run-all lint:* -s",
+    "format:js": "eslint --fix --ignore-path .gitignore \"**/*.js\"",
+    "format:css": "stylelint --fix --ignore-path .gitignore **/*.scss",
+    "format:prettier": "pretty-quick",
+    "format": "npm-run-all format:* -s",
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "@yuzulabo/eslint-config": "^1.0.1",
+    "@yuzulabo/prettier-config": "^1.0.1",
+    "eslint": "^6.7.2",
+    "eslint-plugin-react": "^7.17.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "stylelint": "^12.0.0",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.13.0"
+  },
+  "prettier": "@yuzulabo/prettier-config",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "bootstrap": "^4.4.1",
+    "next": "^9.1.5",
+    "node-sass": "^4.13.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "reactstrap": "^8.2.0"
+  }
+}

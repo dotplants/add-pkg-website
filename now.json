@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "add-pkg",
+  "scope": "dotplants",
+  "alias": ["add-pkg.dotplnats.net"],
+  "regions": ["hnd1"],
+  "public": false,
+  "github": { "silent": true }
+}

@@ -1,3 +1,5 @@
+![img](https://i.imgur.com/QbhCaav.png)
+
 # @dotplants/add-pkg-website
 
 https://add-pkg.dotplants.net/

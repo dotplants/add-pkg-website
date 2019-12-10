@@ -29,6 +29,17 @@ const Index = () => {
     <>
       <Head>
         <title>add-pkg: Install the package with your package manager</title>
+        <meta property="og:title" content="add-pkg" />
+        <meta
+          property="og:description"
+          content="Install the package with your package manager"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://add-pkg.dotplants.net/" />
+        <meta
+          property="og:image"
+          content="https://add-pkg.dotplants.net/static/hero.png"
+        />
       </Head>
 
       <Container>

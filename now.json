@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "name": "add-pkg",
+  "name": "add-pkg-website",
   "scope": "dotplants",
-  "alias": ["add-pkg.dotplnats.net"],
+  "alias": ["add-pkg.dotplants.net"],
   "regions": ["hnd1"],
   "public": false,
   "github": { "silent": true }
